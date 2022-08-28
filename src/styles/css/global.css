@@ -1,9 +1,4 @@
 :root {
-  --primary-hue: 220;
-  --secondary-hue: 260;
-  --success-hue: 120;
-  --warning-hue: 20;
-  --danger-hue: 0;
   --color-gray-98: hsl(0deg 0% 98%);
   --color-gray-90: hsl(0deg 0% 90%);
   --color-gray-80: hsl(0deg 0% 80%);
@@ -12,33 +7,14 @@
   --color-gray-30: hsl(0deg 0% 30%);
   --color-gray-20: hsl(0deg 0% 20%);
   --color-gray-10: hsl(0deg 0% 10%);
-  --color-default-background: var(--color-gray-98);
-  --color-default-foreground: var(--color-gray-10);
-  --color-primary: hsl(var(--primary-hue) 100% 56%);
-  --color-primary-fade: hsl(var(--primary-hue) 100% 96%);
-  --color-primary-lighter: hsl(var(--primary-hue) 100% 60%);
-  --color-primary-darker: hsl(var(--primary-hue) 100% 52%);
+  --color-black: hsl(0deg 0% 0%);
+  --color-default-background: var(--color-black);
+  --color-default-foreground: var(--color-gray-98);
+  --color-primary: hsl(345deg 80% 44%);
+  --color-primary-fade: hsl(345deg 80% 96%);
+  --color-primary-lighter: hsl(345deg 80% 48%);
+  --color-primary-darker: hsl(345deg 80% 40%);
   --color-primary-opposite: var(--color-gray-98);
-  --color-secondary: hsl(var(--secondary-hue) 50% 50%);
-  --color-secondary-fade: hsl(var(--secondary-hue) 100% 90%);
-  --color-secondary-lighter: hsl(var(--secondary-hue) 50% 56%);
-  --color-secondary-darker: hsl(var(--secondary-hue) 50% 44%);
-  --color-secondary-opposite: var(--color-gray-98);
-  --color-warning: hsl(var(--warning-hue) 100% 44%);
-  --color-warning-fade: hsl(var(--warning-hue) 100% 90%);
-  --color-warning-lighter: hsl(var(--warning-hue) 100% 50%);
-  --color-warning-darker: hsl(var(--warning-hue) 100% 40%);
-  --color-warning-opposite: var(--color-gray-98);
-  --color-success: hsl(var(--success-hue) 100% 40%);
-  --color-success-fade: hsl(var(--success-hue) 100% 92%);
-  --color-success-lighter: hsl(var(--success-hue) 100% 44%);
-  --color-success-darker: hsl(var(--success-hue) 100% 36%);
-  --color-success-opposite: var(--color-gray-98);
-  --color-danger: hsl(var(--danger-hue) 100% 36%);
-  --color-danger-fade: hsl(var(--danger-hue) 100% 90%);
-  --color-danger-lighter: hsl(var(--danger-hue) 100% 42%);
-  --color-danger-darker: hsl(var(--danger-hue) 100% 30%);
-  --color-danger-opposite: var(--color-gray-98);
   --color-body-background: var(--color-default-background);
   --color-body-foreground: var(--color-default-foreground);
   --color-placeholder: var(--color-gray-40);
@@ -51,6 +27,7 @@
   --color-popper-foreground: var(--color-default-background);
   --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
   --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
+  --border-radius: 0.2rem;
   --full-width: 120rem;
   --full-width-padding-inline: calc(max(100% - var(--full-width), 4rem) / 2);
   --shell-padding: 2rem;
@@ -68,6 +45,7 @@
 }
 
 html {
+  scroll-behavior: smooth;
   font-family: Poppins, sans-serif;
   font-size: 62.5%;
 }
@@ -95,20 +73,34 @@ a {
   text-decoration: none;
 }
 
-button {
+button,
+.button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
   padding: 0.75rem 1.5rem;
   border: none;
-  border-radius: 999rem;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
 }
-button:not([disabled]) {
+button:not([disabled]),
+.button:not([disabled]) {
   cursor: pointer;
 }
-button:not([disabled]):hover {
-  filter: brightness(90%);
-}
-button[disabled] {
+button[disabled],
+.button[disabled] {
   background-color: var(--color-button-disabled-background) !important;
   color: var(--color-button-disabled-foreground) !important;
+}
+button--primary,
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-opposite);
+}
+button--primary:hover,
+.button--primary:hover {
+  background-color: var(--color-primary-darker);
 }
 
 input:focus {
@@ -133,14 +125,18 @@ body {
   background-color: var(--color-body-background);
   color: var(--color-body-foreground);
   width: 100%;
-  padding-inline: var(--full-width-padding-inline);
   font-size: 1.6rem;
 }
+body > * {
+  padding-block: 2rem;
+}
 
-.wrapper {
-  display: flex;
-  flex-direction: column;
-  gap: var(--gap, 4rem);
+.bleed {
+  padding-inline: var(--full-width-padding-inline);
+}
+
+.primary {
+  color: var(--color-primary);
 }
 
 /*# sourceMappingURL=global.css.map */
