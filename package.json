@@ -1,0 +1,21 @@
+{
+    "name": "catalystic-converters",
+    "version": "1.0.0",
+    "scripts": {
+        "dev": "concurrently \"npm run sass:watch\" \"npm run live-server\"",
+        "sass:watch": "sass src/styles/scss:src/styles/css --watch",
+        "live-server": "live-server src"
+    },
+    "author": "BijanProgrammer",
+    "devDependencies": {
+        "concurrently": "^7.3.0",
+        "live-server": "^1.2.2",
+        "postcss": "^8.4.16",
+        "prettier": "^2.7.1",
+        "sass": "^1.54.5",
+        "stylelint": "^14.11.0",
+        "stylelint-config-prettier-scss": "^0.0.1",
+        "stylelint-config-standard-scss": "^5.0.0",
+        "stylelint-order": "^5.0.0"
+    }
+}
