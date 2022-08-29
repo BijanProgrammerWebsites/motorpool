@@ -17,8 +17,8 @@ header {
     }
 
     .overlay {
-        background-image: linear-gradient(to right, hsl(0deg 0% 0% / 100%), hsl(0deg 0% 0% / 50%)),
-            linear-gradient(to top, hsl(0deg 0% 0% / 100%), hsl(0deg 0% 0% / 0%) 30%);
+        background-image: linear-gradient(to right, var(--gradien-color-dark), var(--gradien-color-dark-transparent-50)),
+            linear-gradient(to top, var(--gradien-color-dark), var(--gradien-color-dark-transparent) 30%);
 
         position: absolute;
         inset: 0;

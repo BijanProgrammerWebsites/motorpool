@@ -27,6 +27,9 @@
   --color-popper-foreground: var(--color-default-background);
   --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
   --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
+  --gradien-color-dark: hsl(0deg 0% 0% / 100%);
+  --gradien-color-dark-transparent-50: hsl(0deg 0% 0% / 50%);
+  --gradien-color-dark-transparent: hsl(0deg 0% 0% / 0%);
   --border-radius: 0.2rem;
   --full-width: 120rem;
   --full-width-padding-inline: calc(max(100% - var(--full-width), 4rem) / 2);
@@ -125,7 +128,7 @@ svg {
 body {
   background-color: var(--color-body-background);
   color: var(--color-body-foreground);
-  width: 100%;
+  min-height: 100vh;
   font-size: 1.6rem;
 }
 body > * {
