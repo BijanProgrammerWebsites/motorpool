@@ -31,6 +31,47 @@ header {
 
         .logo {
             font-size: 2.4rem;
+
+            &:hover {
+                color: var(--color-primary);
+            }
+        }
+
+        ul {
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+
+            margin-inline-start: auto;
+
+            li {
+                a {
+                    position: relative;
+
+                    &::before {
+                        content: "";
+
+                        background-color: currentcolor;
+
+                        position: absolute;
+                        inset-block-end: 0;
+
+                        width: 100%;
+                        height: 0.1rem;
+
+                        transform: scaleX(0);
+                        transform-origin: center;
+
+                        transition: transform var(--animation-duration-fast) ease-in-out;
+                    }
+
+                    &:hover {
+                        &::before {
+                            transform: scaleX(1);
+                        }
+                    }
+                }
+            }
         }
     }
 

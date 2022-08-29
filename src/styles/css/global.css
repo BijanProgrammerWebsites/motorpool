@@ -10,9 +10,9 @@
   --color-black: hsl(0deg 0% 0%);
   --color-default-background: var(--color-black);
   --color-default-foreground: var(--color-gray-98);
-  --color-primary: hsl(345deg 80% 44%);
-  --color-primary-fade: hsl(345deg 80% 96%);
-  --color-primary-lighter: hsl(345deg 80% 48%);
+  --color-primary: hsl(345deg 80% 48%);
+  --color-primary-fade: hsl(345deg 20% 90%);
+  --color-primary-lighter: hsl(345deg 80% 52%);
   --color-primary-darker: hsl(345deg 80% 40%);
   --color-primary-opposite: var(--color-gray-98);
   --color-body-background: var(--color-default-background);
@@ -133,6 +133,28 @@ body {
 }
 body > * {
   padding-block: 2rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+}
+section > .title {
+  display: flex;
+  flex-direction: column;
+}
+section > .title span,
+section > .title h2 {
+  line-height: 1;
+}
+section > .title span {
+  color: var(--color-primary-fade);
+}
+section > .title h2 {
+  color: var(--color-primary);
+  font-size: 4.8rem;
+  text-transform: uppercase;
 }
 
 .bleed {

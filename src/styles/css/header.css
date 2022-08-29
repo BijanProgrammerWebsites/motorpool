@@ -25,6 +25,32 @@ header nav {
 header nav .logo {
   font-size: 2.4rem;
 }
+header nav .logo:hover {
+  color: var(--color-primary);
+}
+header nav ul {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  margin-inline-start: auto;
+}
+header nav ul li a {
+  position: relative;
+}
+header nav ul li a::before {
+  content: "";
+  background-color: currentcolor;
+  position: absolute;
+  inset-block-end: 0;
+  width: 100%;
+  height: 0.1rem;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform var(--animation-duration-fast) ease-in-out;
+}
+header nav ul li a:hover::before {
+  transform: scaleX(1);
+}
 header .hero {
   flex: 1;
   box-sizing: content-box;

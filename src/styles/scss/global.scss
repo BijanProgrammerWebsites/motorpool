@@ -13,9 +13,9 @@
     --color-default-background: var(--color-black);
     --color-default-foreground: var(--color-gray-98);
 
-    --color-primary: hsl(345deg 80% 44%);
-    --color-primary-fade: hsl(345deg 80% 96%);
-    --color-primary-lighter: hsl(345deg 80% 48%);
+    --color-primary: hsl(345deg 80% 48%);
+    --color-primary-fade: hsl(345deg 20% 90%);
+    --color-primary-lighter: hsl(345deg 80% 52%);
     --color-primary-darker: hsl(345deg 80% 40%);
     --color-primary-opposite: var(--color-gray-98);
 
@@ -164,6 +164,34 @@ body {
 
     > * {
         padding-block: 2rem;
+    }
+}
+
+section {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+
+    > .title {
+        display: flex;
+        flex-direction: column;
+
+        span,
+        h2 {
+            line-height: 1;
+        }
+
+        span {
+            color: var(--color-primary-fade);
+        }
+
+        h2 {
+            color: var(--color-primary);
+
+            font-size: 4.8rem;
+
+            text-transform: uppercase;
+        }
     }
 }
 

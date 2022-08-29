@@ -2,13 +2,13 @@ const INTERVAL_DURATION = 5000;
 const ANIMATION_DURATION = 500;
 const ANIMATION_EASING = 'ease-in-out';
 
-const slides = document.querySelector('main > .slideshow > .slides');
-const firstSlide = document.querySelector('main > .slideshow > .slides > li:first-of-type');
-const lastSlide = document.querySelector('main > .slideshow > .slides > li:last-of-type');
+const slides = document.querySelector('.slideshow > .slides');
+const firstSlide = document.querySelector('.slideshow > .slides > li:first-of-type');
+const lastSlide = document.querySelector('.slideshow > .slides > li:last-of-type');
 const slidesCount = slides.querySelectorAll('img').length;
-const bullets = document.querySelectorAll('main > .slideshow > .bullets > li > .bullet');
-const previousButton = document.querySelector('main > .slideshow > button.previous');
-const nextButton = document.querySelector('main > .slideshow > button.next');
+const bullets = document.querySelectorAll('.slideshow > .bullets > li > .bullet');
+const previousButton = document.querySelector('.slideshow > button.previous');
+const nextButton = document.querySelector('.slideshow > button.next');
 
 let currentSlideIndex = 0;
 let timeout;
