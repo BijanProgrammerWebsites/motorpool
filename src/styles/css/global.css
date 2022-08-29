@@ -6,6 +6,7 @@
   --color-gray-40: hsl(0deg 0% 40%);
   --color-gray-30: hsl(0deg 0% 30%);
   --color-gray-20: hsl(0deg 0% 20%);
+  --color-gray-12: hsl(0deg 0% 12%);
   --color-gray-10: hsl(0deg 0% 10%);
   --color-black: hsl(0deg 0% 0%);
   --color-default-background: var(--color-black);
@@ -50,6 +51,7 @@
 
 html {
   scroll-behavior: smooth;
+  scroll-padding: 2rem;
   font-family: Poppins, sans-serif;
   font-size: 62.5%;
 }
@@ -128,17 +130,25 @@ svg {
 body {
   background-color: var(--color-body-background);
   color: var(--color-body-foreground);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
   min-height: 100vh;
   font-size: 1.6rem;
 }
 body > * {
   padding-block: 2rem;
 }
+body main {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+}
 
 section {
   display: flex;
   flex-direction: column;
-  gap: 4rem;
+  gap: 2rem;
 }
 section > .title {
   display: flex;

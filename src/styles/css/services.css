@@ -1,0 +1,21 @@
+#services ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+#services ul li {
+  flex: 1 1 auto;
+  background-color: var(--color-gray-10);
+  padding: 2rem;
+  border-radius: var(--border-radius);
+  font-size: 2rem;
+  text-align: center;
+}
+#services ul li:last-of-type {
+  flex: 1 0 100%;
+  font-size: 3.6rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+/*# sourceMappingURL=services.css.map */
