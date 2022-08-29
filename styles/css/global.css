@@ -1,0 +1,178 @@
+:root {
+  --color-gray-98: hsl(0deg 0% 98%);
+  --color-gray-90: hsl(0deg 0% 90%);
+  --color-gray-80: hsl(0deg 0% 80%);
+  --color-gray-70: hsl(0deg 0% 70%);
+  --color-gray-40: hsl(0deg 0% 40%);
+  --color-gray-30: hsl(0deg 0% 30%);
+  --color-gray-20: hsl(0deg 0% 20%);
+  --color-gray-12: hsl(0deg 0% 12%);
+  --color-gray-10: hsl(0deg 0% 10%);
+  --color-black: hsl(0deg 0% 0%);
+  --color-default-background: var(--color-black);
+  --color-default-foreground: var(--color-gray-98);
+  --color-primary: hsl(345deg 80% 48%);
+  --color-primary-fade: hsl(345deg 20% 90%);
+  --color-primary-lighter: hsl(345deg 80% 52%);
+  --color-primary-darker: hsl(345deg 80% 40%);
+  --color-primary-opposite: var(--color-gray-98);
+  --color-body-background: var(--color-default-background);
+  --color-body-foreground: var(--color-default-foreground);
+  --color-placeholder: var(--color-gray-40);
+  --color-border-fade: var(--color-gray-80);
+  --color-separator: var(--color-border-fade);
+  --color-input-border: var(--color-border-fade);
+  --color-button-disabled-background: var(--color-gray-70);
+  --color-button-disabled-foreground: var(--color-default-foreground);
+  --color-popper-background: var(--color-gray-20);
+  --color-popper-foreground: var(--color-default-background);
+  --color-box-shadow-subtle: hsl(0deg 0% 10% / 12%);
+  --box-shadow-subtle: 0 0.2rem 0.5rem 0 var(--color-box-shadow-subtle);
+  --gradien-color-dark: hsl(0deg 0% 0% / 100%);
+  --gradien-color-dark-transparent-50: hsl(0deg 0% 0% / 50%);
+  --gradien-color-dark-transparent: hsl(0deg 0% 0% / 0%);
+  --border-radius: 0.2rem;
+  --full-width: 120rem;
+  --full-width-padding-inline: calc(max(100% - var(--full-width), 4rem) / 2);
+  --shell-padding: 2rem;
+  --animation-duration-fast: 0.1s;
+  --animation-duration-normal: 0.5s;
+  --animation-duration-slow: 1s;
+  color-scheme: dark;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding: 2rem;
+  font-family: Poppins, sans-serif;
+  font-size: 62.5%;
+}
+
+input,
+label,
+select,
+textarea,
+button,
+fieldset,
+legend,
+datalist,
+output,
+option,
+optgroup {
+  font-family: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+.button {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  width: fit-content;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  border-radius: var(--border-radius);
+  text-transform: uppercase;
+}
+button:not([disabled]),
+.button:not([disabled]) {
+  cursor: pointer;
+}
+button[disabled],
+.button[disabled] {
+  background-color: var(--color-button-disabled-background) !important;
+  color: var(--color-button-disabled-foreground) !important;
+}
+button--primary,
+.button--primary {
+  background-color: var(--color-primary);
+  color: var(--color-primary-opposite);
+}
+button--primary:hover,
+.button--primary:hover {
+  background-color: var(--color-primary-darker);
+}
+
+input:focus {
+  outline: none;
+}
+input[type=file] {
+  display: none;
+}
+
+img {
+  display: block;
+}
+
+svg {
+  fill: currentcolor !important;
+  display: block;
+  width: 1em !important;
+  height: 1em !important;
+}
+
+body {
+  background-color: var(--color-body-background);
+  color: var(--color-body-foreground);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  min-height: 100vh;
+  font-size: 1.6rem;
+}
+body > * {
+  padding-block: 2rem;
+}
+body main {
+  display: flex;
+  flex-direction: column;
+  gap: 12rem;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+section > .title {
+  display: flex;
+  flex-direction: column;
+}
+section > .title span,
+section > .title h2 {
+  line-height: 1;
+}
+section > .title span {
+  color: var(--color-primary-fade);
+}
+section > .title h2 {
+  color: var(--color-primary);
+  font-size: 4.8rem;
+  text-transform: uppercase;
+}
+
+.bleed {
+  padding-inline: var(--full-width-padding-inline);
+}
+
+.primary {
+  color: var(--color-primary);
+}
+
+/*# sourceMappingURL=global.css.map */
