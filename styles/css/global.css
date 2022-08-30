@@ -175,6 +175,11 @@ section > .title h2 {
   color: var(--color-primary);
 }
 
+@media (max-width: 700px) {
+  section > .title {
+    align-items: center;
+  }
+}
 @media (max-width: 450px) {
   section > .title h2 {
     font-size: 3.6rem;
