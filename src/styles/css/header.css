@@ -25,6 +25,7 @@ header nav {
 }
 header nav .logo {
   font-size: 2.4rem;
+  text-align: center;
 }
 header nav .logo:hover {
   color: var(--color-primary);
