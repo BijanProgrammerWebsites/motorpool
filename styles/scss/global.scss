@@ -216,3 +216,13 @@ section {
 .primary {
     color: var(--color-primary);
 }
+
+@media (max-width: 450px) {
+    section {
+        > .title {
+            h2 {
+                font-size: 3.6rem;
+            }
+        }
+    }
+}
