@@ -18,4 +18,14 @@
   text-transform: uppercase;
 }
 
+@media (max-width: 450px) {
+  #services ul li {
+    padding: 1rem;
+    font-size: 1.6rem;
+  }
+  #services ul li:last-of-type {
+    font-size: 2.8rem;
+  }
+}
+
 /*# sourceMappingURL=services.css.map */

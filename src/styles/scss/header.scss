@@ -3,6 +3,7 @@ header {
 
     display: flex;
     flex-direction: column;
+    gap: 8rem;
 
     min-height: 100vh;
 
@@ -101,6 +102,34 @@ header {
 
         a {
             margin-block-start: 4rem;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    header {
+        nav {
+            justify-content: center;
+
+            ul {
+                display: none;
+            }
+        }
+
+        .hero {
+            align-items: center;
+
+            text-align: center;
+        }
+    }
+}
+
+@media (max-width: 450px) {
+    header {
+        .hero {
+            h1 {
+                font-size: 4.8rem;
+            }
         }
     }
 }

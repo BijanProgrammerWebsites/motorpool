@@ -28,3 +28,19 @@
         }
     }
 }
+
+@media (max-width: 450px) {
+    #services {
+        ul {
+            li {
+                padding: 1rem;
+
+                font-size: 1.6rem;
+
+                &:last-of-type {
+                    font-size: 2.8rem;
+                }
+            }
+        }
+    }
+}
