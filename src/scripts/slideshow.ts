@@ -2,30 +2,40 @@ const INTERVAL_DURATION = 5000;
 const ANIMATION_DURATION = 500;
 const ANIMATION_EASING = "ease-in-out";
 
-const slides = document.querySelector(".slideshow > .slides");
-const firstSlide = document.querySelector(
+const slides = document.querySelector<HTMLUListElement>(
+  ".slideshow > .slides",
+)!;
+
+const firstSlide = document.querySelector<HTMLLIElement>(
   ".slideshow > .slides > li:first-of-type",
-);
-const lastSlide = document.querySelector(
+)!;
+const lastSlide = document.querySelector<HTMLLIElement>(
   ".slideshow > .slides > li:last-of-type",
-);
+)!;
+
 const slidesCount = slides.querySelectorAll("img").length;
-const bullets = document.querySelectorAll(
+
+const bullets = document.querySelectorAll<HTMLElement>(
   ".slideshow > .bullets > li > .bullet",
 );
-const previousButton = document.querySelector(".slideshow > button.previous");
-const nextButton = document.querySelector(".slideshow > button.next");
+
+const previousButton = document.querySelector<HTMLButtonElement>(
+  ".slideshow > button.previous",
+)!;
+const nextButton = document.querySelector<HTMLButtonElement>(
+  ".slideshow > button.next",
+)!;
 
 let currentSlideIndex = 0;
-let timeout;
+let timeout: number | undefined;
 let isAnimating = false;
 
-const initializeEventListeners = () => {
+const initializeEventListeners = (): void => {
   previousButton.addEventListener("click", goToThePreviousSlide);
   nextButton.addEventListener("click", goToTheNextSlide);
 };
 
-const goToThePreviousSlide = () => {
+const goToThePreviousSlide = (): void => {
   if (isAnimating) return;
   isAnimating = true;
 
@@ -41,7 +51,7 @@ const goToThePreviousSlide = () => {
   );
 };
 
-const goToTheNextSlide = () => {
+const goToTheNextSlide = (): void => {
   if (isAnimating) return;
   isAnimating = true;
 
@@ -52,7 +62,12 @@ const goToTheNextSlide = () => {
   changeSlide(currentSlideIndex + 1, shouldFallback, 0, firstSlide);
 };
 
-const changeSlide = (index, shouldFallback, fallbackIndex, fallbackSlide) => {
+const changeSlide = (
+  index: number,
+  shouldFallback: boolean,
+  fallbackIndex: number,
+  fallbackSlide: HTMLLIElement,
+): void => {
   clearTimeout(timeout);
 
   const animation = slides.animate(
@@ -84,12 +99,12 @@ const changeSlide = (index, shouldFallback, fallbackIndex, fallbackSlide) => {
   });
 };
 
-const syncActiveBullet = (index) => {
+const syncActiveBullet = (index: number): void => {
   bullets.forEach((bullet) => bullet.classList.remove("active"));
   bullets[index].classList.add("active");
 };
 
-const resetTimeout = () => {
+const resetTimeout = (): void => {
   clearTimeout(timeout);
 
   timeout = setTimeout(() => {
@@ -97,7 +112,7 @@ const resetTimeout = () => {
   }, INTERVAL_DURATION);
 };
 
-const main = () => {
+const main = (): void => {
   initializeEventListeners();
   resetTimeout();
 };
