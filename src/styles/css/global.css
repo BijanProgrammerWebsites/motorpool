@@ -112,7 +112,7 @@ button--primary:hover,
 input:focus {
   outline: none;
 }
-input[type=file] {
+input[type="file"] {
   display: none;
 }
 

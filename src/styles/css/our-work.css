@@ -26,7 +26,18 @@
   object-position: center;
 }
 #our-work .slideshow .overlay {
-  background-image: linear-gradient(to right, var(--gradien-color-dark-transparent-50), var(--gradien-color-dark-transparent) 30%, var(--gradien-color-dark-transparent) 70%, var(--gradien-color-dark-transparent-50)), linear-gradient(to top, var(--gradien-color-dark-transparent-50), var(--gradien-color-dark-transparent) 30%);
+  background-image: linear-gradient(
+      to right,
+      var(--gradien-color-dark-transparent-50),
+      var(--gradien-color-dark-transparent) 30%,
+      var(--gradien-color-dark-transparent) 70%,
+      var(--gradien-color-dark-transparent-50)
+    ),
+    linear-gradient(
+      to top,
+      var(--gradien-color-dark-transparent-50),
+      var(--gradien-color-dark-transparent) 30%
+    );
   position: absolute;
   inset: 0;
   z-index: 1;
@@ -68,7 +79,11 @@
 }
 #our-work .slideshow > button::before {
   content: "";
-  background-image: linear-gradient(var(--gradient-direction), var(--gradien-color-dark-transparent-50), var(--gradien-color-dark-transparent));
+  background-image: linear-gradient(
+    var(--gradient-direction),
+    var(--gradien-color-dark-transparent-50),
+    var(--gradien-color-dark-transparent)
+  );
   opacity: 0;
   position: absolute;
   inset: 0;

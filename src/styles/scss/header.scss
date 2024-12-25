@@ -1,137 +1,149 @@
 header {
-    position: relative;
+  position: relative;
+
+  display: flex;
+  flex-direction: column;
+  gap: 8rem;
+
+  min-height: 100vh;
+
+  .background {
+    position: absolute;
+    inset: 0;
+    z-index: -2;
+
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .overlay {
+    background-image: linear-gradient(
+        to right,
+        var(--gradien-color-dark),
+        var(--gradien-color-dark-transparent-50)
+      ),
+      linear-gradient(
+        to top,
+        var(--gradien-color-dark),
+        var(--gradien-color-dark-transparent) 20%
+      ),
+      linear-gradient(
+        to bottom,
+        var(--gradien-color-dark),
+        var(--gradien-color-dark-transparent) 20%
+      );
+
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+
+  nav {
+    display: flex;
+    align-items: center;
+
+    .logo {
+      font-size: 2.4rem;
+
+      text-align: center;
+
+      &:hover {
+        color: var(--color-primary);
+      }
+    }
+
+    ul {
+      display: flex;
+      align-items: center;
+      gap: 2rem;
+
+      margin-inline-start: auto;
+
+      li {
+        a {
+          position: relative;
+
+          &::before {
+            content: "";
+
+            background-color: currentcolor;
+
+            position: absolute;
+            inset-block-end: 0;
+
+            width: 100%;
+            height: 0.1rem;
+
+            transform: scaleX(0);
+            transform-origin: center;
+
+            transition: transform var(--animation-duration-fast) ease-in-out;
+          }
+
+          &:hover {
+            &::before {
+              transform: scaleX(1);
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .hero {
+    flex: 1;
+
+    box-sizing: content-box;
 
     display: flex;
     flex-direction: column;
-    gap: 8rem;
+    justify-content: center;
+    gap: 2rem;
 
-    min-height: 100vh;
+    max-width: 50ch;
 
-    .background {
-        position: absolute;
-        inset: 0;
-        z-index: -2;
+    font-size: 1.8rem;
 
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
+    h1 {
+      color: var(--color-gray-98);
+
+      font-size: 6rem;
+
+      text-transform: uppercase;
+      line-height: 1;
     }
 
-    .overlay {
-        background-image: linear-gradient(to right, var(--gradien-color-dark), var(--gradien-color-dark-transparent-50)),
-            linear-gradient(to top, var(--gradien-color-dark), var(--gradien-color-dark-transparent) 20%),
-            linear-gradient(to bottom, var(--gradien-color-dark), var(--gradien-color-dark-transparent) 20%);
-
-        position: absolute;
-        inset: 0;
-        z-index: -1;
+    a {
+      margin-block-start: 4rem;
     }
-
-    nav {
-        display: flex;
-        align-items: center;
-
-        .logo {
-            font-size: 2.4rem;
-
-            text-align: center;
-
-            &:hover {
-                color: var(--color-primary);
-            }
-        }
-
-        ul {
-            display: flex;
-            align-items: center;
-            gap: 2rem;
-
-            margin-inline-start: auto;
-
-            li {
-                a {
-                    position: relative;
-
-                    &::before {
-                        content: "";
-
-                        background-color: currentcolor;
-
-                        position: absolute;
-                        inset-block-end: 0;
-
-                        width: 100%;
-                        height: 0.1rem;
-
-                        transform: scaleX(0);
-                        transform-origin: center;
-
-                        transition: transform var(--animation-duration-fast) ease-in-out;
-                    }
-
-                    &:hover {
-                        &::before {
-                            transform: scaleX(1);
-                        }
-                    }
-                }
-            }
-        }
-    }
-
-    .hero {
-        flex: 1;
-
-        box-sizing: content-box;
-
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 2rem;
-
-        max-width: 50ch;
-
-        font-size: 1.8rem;
-
-        h1 {
-            color: var(--color-gray-98);
-
-            font-size: 6rem;
-
-            text-transform: uppercase;
-            line-height: 1;
-        }
-
-        a {
-            margin-block-start: 4rem;
-        }
-    }
+  }
 }
 
 @media (max-width: 700px) {
-    header {
-        nav {
-            justify-content: center;
+  header {
+    nav {
+      justify-content: center;
 
-            ul {
-                display: none;
-            }
-        }
-
-        .hero {
-            align-items: center;
-
-            text-align: center;
-        }
+      ul {
+        display: none;
+      }
     }
+
+    .hero {
+      align-items: center;
+
+      text-align: center;
+    }
+  }
 }
 
 @media (max-width: 450px) {
-    header {
-        .hero {
-            h1 {
-                font-size: 4.8rem;
-            }
-        }
+  header {
+    .hero {
+      h1 {
+        font-size: 4.8rem;
+      }
     }
+  }
 }
